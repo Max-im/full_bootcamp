@@ -1,0 +1,29 @@
+<% include ./partials/header %>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">EDIT POST</h1>
+  </div>
+</div>
+
+<div class="container blog">
+    <form method="POST" action="/<%= blogItem._id%>?_method=PUT">
+        <div class="form-group">
+            <label for="editTitle">Post title</label>
+            <input name="post[title]" type="text" class="form-control" id="editTitle" value="<%= blogItem.title %>">
+            <small id="emailHelp" class="form-text text-muted">Type new post title.</small>
+        </div>
+        <div class="form-group">
+            <label for="editImg">Post image url</label>
+            <input name="post[img]" type="text" class="form-control" id="editImg" value="<%= blogItem.img %>">
+            <small class="form-text text-muted">Type new post image url.</small>
+        </div>
+        <div class="form-group">
+            <label for="editText">Post text</label>
+            <input name="post[text]" type="text" class="form-control" id="editText" value="<%= blogItem.text %>">
+            <small class="form-text text-muted">Type new post text.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+    </form>
+</div>
+
+<% include ./partials/footer %>

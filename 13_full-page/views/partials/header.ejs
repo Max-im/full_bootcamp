@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>full-page</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header class="header">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+          <a class="navbar-brand" href="#">Logo</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="/">Home</a>
+              <% if(currentUser) { %>
+                <a class="nav-item nav-link" href="/logout">Logout</a>
+                <i class="nav-item nav-link">Hello <%= currentUser.username %></i>
+              <% } else { %>
+                <a class="nav-item nav-link" href="/login">Login</a>
+                <a class="nav-item nav-link" href="/signup">Signup</a>
+              <% } %>
+            </div>
+          </div>
+      </div>
+    </nav>
+</header>
+
+
+<div class="container container__relative">
+  
+  <% if(errorMsg && errorMsg.length > 0) {%>
+    <div class="alert alert-danger" role="alert">
+      <%= errorMsg %>
+    </div>
+  <% } %>
+  
+  <% if(successMsg && successMsg.length > 0) {%>
+    <div class="alert alert-success" role="alert">
+      <%= successMsg %>
+    </div>
+  <% } %>
+</div>

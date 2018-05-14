@@ -1,0 +1,22 @@
+<% include partials/header %>
+<header class="jumbotron">
+    <div class="container">
+        <h1>campgrounds page</h1>
+    </div>
+</header>
+
+<div class="container">
+    <ul class="row">
+    <% data.forEach(item => { %>
+        <li class="col-md-3">
+            <p class="itemTitle"><%= item.name %></p>
+            <div class="thumbnail">
+                <img src="<%= item.img %>" /></%> 
+            </div>
+        </li>
+    <% }) %>
+    </ul>
+   
+</div>
+
+<% include partials/footer %>

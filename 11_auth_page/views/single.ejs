@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+<h1>secret</h1>
+
+
+    
+<div class="container">
+    <form method="POST" action="/blog/<%= data._id %>?_method=DELETE">
+        <button>Remove the article</button>
+    </form>
+    <form method="GET" action="/blog/<%= data._id %>/edit">
+        <button>Edit the article</button>
+    </form>
+    
+    <div class="item">
+        <h4 class="item__title"><%= data.title %></h4>
+        <image class="item__img" src="<%= data.img %>" alt="<%= data.title %>"/>
+        <p class="item__text"><%= data.body %></p>
+        <% if(data.author.username) { %>
+            <i><p class="item__author">author -  <%= data.author.username %></p></i>
+        <% } %>
+    </div>
+</div>
+<ul class="comments">
+    <h3>Comments</h3>
+    <%data.comments.forEach(commentItem => { %>
+        <li class="comment__item">
+            <h5 class="comment__title"><%= commentItem.author.username %>: </h5>
+            <p class="comment__text"><%= commentItem.text %></p>
+        </li>
+    <% })%>
+</ul>
+
+
+
+<div class="commentsBlock container">
+    <form method="POST" action="/blog/<%= data._id %>/comment">
+      <h3>Add new comment</h3>
+      <div>
+          <textarea class="comment__textarea" name="comment[text]" placeholder="comment"></textarea>
+      </div>
+      <button type="submit">submit</button>
+    </form>
+</div>
+
+
+
+<% include ./partials/footer %>

@@ -1,0 +1,37 @@
+<% include ./partials/header %>
+
+
+<main class="main__container container ui">
+    <h1>index page</h1>
+    <div class="content">
+        <% data.forEach(item => { %>
+            <div class="ui card">
+                <div class="image">
+                    <img src="<%= item.img %>">
+                </div>
+                <div class="content">
+                    <a class="header" href="/blogs/<%= item._id %>"><%= item.title %></a>
+                </div>
+                <div class="card__innerWrap">
+                    <div class="meta">
+                        <span class="date"><%= item.created %></span>
+                    </div>
+                    <div class="description">
+                          <%= item.body %>
+                    </div>
+                </div>
+                <div class="control">
+                    <a class="control__item" href="/blogs/<%= item._id %>/edit"><i class="edit icon"></i> edit</a>
+                    <form id="myform" action="/blogs/<%= item._id %>?_method=DELETE" method="POST">
+                        <button class="control__item" onclick="document.getElementById('myform').submit()" ><i class="trash alternate outline icon"></i> remove</button>
+                    </form>
+                </div>
+            </div>
+        <% }) %>
+        <div class="ui card">
+            <a href="/blogs/new" class="card__newLink">+</a>
+        </div>            
+    </div>
+</main>
+
+<% include ./partials/footer %>

@@ -1,0 +1,79 @@
+<% include ./partials/header %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><%= blogItem.title %></h1>
+    <p class="lead">Author - <%= blogItem.author.username  %></p>
+  </div>
+</div>
+
+<!--INFO-->
+<div class="container block">
+  <div class="card text-center">
+    <p class="card-header"><%= blogItem.title %></p>
+    <div class="card-body">
+      <img alt="<%= blogItem.title %>" src="<%= blogItem.img %>" />
+      <p class="card-text"><%= blogItem.text %></p>
+      
+      <% if(currentUser && currentUser._id.equals(blogItem.author.id)) { %>
+        <div class="btn__block">
+          <div class="btn__block_item">
+            <a href="/<%= blogItem._id %>/edit" class="btn btn-info">Edit</a>
+          </div>
+          <form class="btn__block_item" method="POST" action="/<%= blogItem._id %>/remove?_method=DELETE">
+            <button class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      <% } %>
+      
+    </div>
+    <div class="card-footer text-muted"><%= blogItem.created %></div>
+  </div>
+</div>
+
+
+<!--COMMENTS-->
+<div class="container block">
+  <div class="card text-center">
+    <p class="card-header">Comments</p>
+    <div class="card-body">
+      <% blogItem.comments.forEach(commentItem => { %>
+        <div class="comment__item">
+          <b class="card-title"><%= commentItem.author.username %> : </b>
+          <% if(currentUser && currentUser._id.equals(commentItem.author.id)) { %>
+            <i class="card-text comment__text"><%= commentItem.text  %></i>
+            <input type="test" value="<%= commentItem.text %>" class="hide comment__input">
+          <% } else {%>
+            <i class="card-text"><%= commentItem.text  %></i>
+          <% } %>
+          
+          <% if(currentUser) { %>
+            <% if( currentUser._id.equals(blogItem.author.id) || currentUser._id.equals(commentItem.author.id)) { %>
+              <form class="removeComment__form" action="/<%= blogItem._id %>/removeComment/<%= commentItem._id %>?_method=DELETE" method="POST">
+                <button class="btn-sm btn btn-outline-danger">X</button>
+              </form>
+            <% } %>
+          <% } %>
+          
+        </div>
+      <% }) %>
+    </div>
+    
+    <% if(currentUser) { %>
+      <div class="card-footer text-muted">
+        <form method="POST" action="/<%= blogItem._id %>/addComment">
+          <div class="form-group">
+            <label>Your comment
+              <input type="text" class="form-control" placeholder="comment" name="comment[text]">
+            </label>
+          </div>
+          <button class="btn btn-primary">Add comment</button>
+        </form>
+      </div>
+    <% } %>
+      
+  </div>
+</div>
+
+
+<% include ./partials/footer %>

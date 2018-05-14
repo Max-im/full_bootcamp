@@ -1,0 +1,50 @@
+<% include ./partials/header %>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4"><%= blogItem.title %></h1>
+  </div>
+</div>
+<div class="container block">
+    <div class="single">
+        <image alt="<%= blogItem.title %>" src="<%= blogItem.img %>" />
+        <p><%= blogItem.text %></p>
+        <i><p><%= blogItem.created %></p></i>
+        <div class="single__btnBlock">
+            <form method="POST" action="/<%= blogItem._id %>?_method=DELETE">
+                <button type="submit" class="btn btn-danger">Remove</button>
+            </form>
+            <div class="single__btnWrap">
+                <a href="/<%= blogItem._id %>/edit" class="btn btn-info">Edit</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container commentsBlock block">
+    <% if(blogItem.comments.length > 0) {%>
+        <ul class="commentsWrap">
+            <h3>Comments</h3>
+            <% blogItem.comments.forEach( commentItem => { %>
+                <li><%= commentItem.text %></li>
+            <% })%>
+        </ul>
+    <% } else { %>
+        <h3>There is no comments</h3>
+    <% } %>
+</div>
+
+
+
+<div class="container addCommentBlock block">
+    <form method="POST" action="/<%= blogItem._id %>/comment">
+        <div class="form-group">
+            <label for="commentForm">Comment</label>
+            <input name="comment[text]" type="text" class="form-control" id="commentForm" placeholder="Type new comment">
+            <small id="emailHelp" class="form-text text-muted">Type new comment.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Comment</button>
+    </form>
+</div>
+
+<% include ./partials/footer %>

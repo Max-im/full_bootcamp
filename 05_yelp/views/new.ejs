@@ -1,0 +1,16 @@
+<% include partials/header %>
+<header class="jumbotron">
+    <div class="container">
+        <h1>Add campground</h1>
+    </div>
+</header>
+
+<div class="container">
+    <form method="POST" action="/campgrounds">
+        <input class="col-md-6 formItem form-control" type="text" name="title" placeholder="title">
+        <input class="col-md-6 formItem form-control" type="text" name="url" placeholder="img url">
+        <button class="btn col-md-6 btn-success">add</button>
+    </form>
+    
+</div>
+<% include partials/footer %>

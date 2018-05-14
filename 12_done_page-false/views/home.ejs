@@ -1,0 +1,50 @@
+<% include ./partials/header %>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">HOME PAGE</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+<div class="container block">
+    <h3 class="block__title block__title_newPost">POSTS</h3>
+    <div class="content">
+        <% dataArr.forEach(postItem => { %>
+            <div class="content__itemWrap">
+                <div class="content__item">
+                    <a href="<%= postItem._id %>">
+                        <h3 class="content__title"><%= postItem.title %></h3>
+                        <img class="content__img" alt="<%= postItem.title %>" src="<%= postItem.img %>" />
+                        <p class="content__text"><%= postItem.text %></p>
+                    </a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+
+<div class="container block">
+    <h3 class="block__title block__title_newPost">ADD NEW POST </h3>
+    <form method="POST" action="/new">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Post title</label>
+            <input name="post[title]" type="text" class="form-control" id="exampleInputEmail1" placeholder="Enter new post title">
+            <small id="emailHelp" class="form-text text-muted">Type new post title.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Post image url</label>
+            <input name="post[img]" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter new post image url">
+            <small class="form-text text-muted">Type new post image url.</small>
+        </div>
+        <div class="form-group">
+            <label for="form_post_text">Post text</label>
+            <input name="post[text]" type="text" class="form-control" id="form_post_text" placeholder="Enter new post text">
+            <small class="form-text text-muted">Type new post text.</small>
+        </div>
+        <button type="submit" class="btn btn-primary">Add</button>
+    </form>
+</div>
+
+
+
+<% include ./partials/footer %>

@@ -1,0 +1,56 @@
+i.menu__icon {
+    margin: 0 0 0 10px !important;
+}
+
+.main__container {
+    margin-top: 60px !important;    
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ui.card{
+    margin: 0 10px 20px 10px;
+    width: 22%;
+    transition: all .3s;
+}
+
+.ui.card:hover{
+    box-shadow: 2px 2px 15px rgba(0,0,0,.7);
+}
+
+.control{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 5%;
+    width: 90%;
+}
+
+.control__item {
+    opacity: .4;
+    color: #272727;
+    transition: all .3s;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.control__item:hover {
+    opacity: 1;
+    color: #272727;
+}
+
+.card__innerWrap{
+    padding: 0 10px;
+}
+
+.card__newLink{
+    font-size: 240px;
+    font-weight: bold;
+    color: #272727;
+    opacity: 0.6;
+    text-align: center;
+    margin: 80% 0 0 0;
+}

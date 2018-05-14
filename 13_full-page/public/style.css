@@ -1,0 +1,105 @@
+a, a:hover {
+    color: #272727;
+    text-decoration: none;
+    outline: none;
+}
+
+form {
+    margin: 0;
+}
+
+.hide {
+    display: none !important;
+}
+
+.block {
+    margin: 50px auto;
+}
+
+.container__relative {
+    position: relative;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content__itemWrap {
+    width: 25%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.content__item {
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 30px 10px;
+    transition: all .3s;
+    height: 350px;
+}
+
+.content__item:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,.8);
+}
+
+.content__title {
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+
+.content__img {
+    width: 100%;
+    max-height: 250px;
+    margin: 0 auto;
+    display: block;
+}
+
+.content__text {
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+
+
+.single__btnWrap {
+    margin: 0 0 0 20px;
+}
+
+.btn__block {
+    display: flex;
+    justify-content: center;
+}
+
+.btn__block_item {
+    margin: 5px;
+}
+
+.card-title {
+    margin: 0 15px 0 0;
+}
+
+
+.comment__item {
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.comment__btn {
+    margin: 0 0 0 15px;
+}
+
+.card-text {
+    margin: 0 15px 0 0;
+}
+
+.alert {
+    position: absolute;
+    right: 0;
+    top: 15px;
+    min-width: 35%;
+    padding: 40px 15px;
+    text-align: center;
+}

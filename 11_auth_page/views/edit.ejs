@@ -1,0 +1,26 @@
+<% include ./partials/header %>
+<h1>edit</h1>
+
+
+    
+<div class="container">
+    <form method="POST" action="/blog/<%= data._id %>?_method=PUT">
+        <div>
+            <input type="text" name="edit[title]" value="<%= data.title %>" />
+        </div>
+        <div>
+            <input type="text" name="edit[img]" value="<%= data.img %>" />
+        </div>
+        <div>
+            <input type="text" name="edit[body]" value="<%= data.body %>" />
+        </div>
+        <button>Save</button>
+    </form>
+</div>
+
+
+
+
+
+
+<% include ./partials/footer %>

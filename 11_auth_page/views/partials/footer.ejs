@@ -1,0 +1,16 @@
+
+<footer class="footer">
+    
+    <ul>
+        <li><a href="/blog">back</a></li>
+        <% if(currentUser) { %>
+            <li><a href="/logout">logout</a></li>
+        <% } else {%>
+            <li><a href="/signup">sign up</a></li>
+            <li><a href="/login">login</a></li>
+        <% } %>
+    </ul>
+</footer>    
+<!--<script src="main.js" type="application/javascript"></script>-->
+</body>
+</html>

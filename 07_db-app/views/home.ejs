@@ -1,0 +1,16 @@
+<% include partials/header %>
+<h1>HOME</h1>
+
+<ul class="cameras">
+<% data.forEach(item => { %>
+    <li ><a href=<%= "/single/"+item._id  %> ><%= item.title %>  <image src="<%= item.img %>" /></a></li>
+<% }) %>
+</ul>
+
+<form method="POST" action="/add">
+    <input type="text" name="title" placeholder="text" />
+    <input type="text" name="img" placeholder="url" />
+    <button>Add</button>
+</form>
+
+<% include partials/footer %>

@@ -1,0 +1,56 @@
+a, a:hover {
+    color: #272727;
+    text-decoration: none;
+}
+
+.block {
+    margin: 50px auto;
+}
+
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.content__itemWrap {
+    width: 25%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.content__item {
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 30px 10px;
+    transition: all .3s;
+}
+
+.content__item:hover {
+    box-shadow: 0 0 15px rgba(0,0,0,.8);
+}
+
+.content__title {
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+
+.content__img {
+    width: 100%;
+}
+
+.content__text {
+    margin: 0;
+    padding: 0 0 5px 0;
+}
+
+
+.single__btnBlock {
+    display: flex;
+}
+
+.single__btnWrap {
+    margin: 0 0 0 20px;
+}

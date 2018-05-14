@@ -1,0 +1,60 @@
+<% include ./partials/header %>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Home page</h1>
+    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+  </div>
+</div>
+
+
+
+<% if(currentUser) { %>
+<div class="container block">
+  
+<h3 class="addPostToggle" data-target="addPost">Add new post</h3>
+  <div id="addPost" class="hide">
+    <form method="POST" action="/new">
+      <div class="form-group">
+        <label>Tytle
+          <input type="text" class="form-control" placeholder="Name" name="post[title]">
+        </label>
+      </div>
+      <div class="form-group">
+        <label>URL
+          <input type="text" class="form-control" placeholder="Name" name="post[img]">
+        </label>
+      </div>
+      <div class="form-group">
+        <label>Text
+          <input type="text" class="form-control" placeholder="Name" name="post[text]">
+        </label>
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Add post</button>
+    </form>
+  </div>
+</div>
+<% } %>
+
+<div class="container block">
+    <h3 class="block__title block__title_newPost">POSTS</h3>
+    <div class="content">
+        <% data.forEach(postItem => { %>
+            <div class="content__itemWrap">
+                <div class="content__item">
+                    <a href="/single/<%= postItem._id %>">
+                        <h3 class="content__title"><%= postItem.title %></h3>
+                        <img class="content__img" alt="<%= postItem.title %>" src="<%= postItem.img %>" />
+                        <p class="content__text"><%= postItem.text %></p>
+                    </a>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
+
+
+
+
+<% include ./partials/footer %>

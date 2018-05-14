@@ -1,0 +1,45 @@
+<% include ./partials/header %>
+
+<main class="main__container container ui main text segment">
+    <h1>single page</h1>
+
+    <div class="item">
+        <div class="image">
+            <img src="<%= data.img %>">
+        </div>
+        <div class="content">
+            <h4 class="header"><%= data.title %></h4>
+        <div class="meta">
+            <span><%= data.created %></span>
+        </div>
+        <div class="description">
+            <p><%= data.body %></p>
+        </div>
+    </div>
+    
+    <div class="comments">
+        <% data.comments.forEach((commentItem => { %>
+            <div class="comments__item">
+                <h5 class="comments__title"><%= commentItem.author %>: </h5>
+                <p class="comments__text"><%= commentItem.text %></p>
+            </div>
+        <% })) %>
+    </div>
+  </div>
+</main>
+
+<div class="commentsBlock container">
+    <form method="POST" action="/blogs/<%= data._id %>/comment">
+      <h3>add new comment</h3>
+      <div>
+          <input class="comment__input" type="text" name="comment[author]" placeholder="author" />
+      </div>
+      <div>
+          <textarea class="comment__textarea" name="comment[text]" placeholder="comment"></textarea>
+      </div>
+      <button type="submit">submit</button>
+    </form>
+</div>
+
+
+<% include ./partials/footer %>

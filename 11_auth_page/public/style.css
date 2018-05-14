@@ -1,0 +1,32 @@
+.container {
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    width: 33.3%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.item__img {
+    width: 100%;
+}
+
+.comment__item {
+    display: flex;
+    align-items: center;
+    margin: 5px;
+    border-bottom: 1px solid #272727;
+}
+
+.comment__title {
+    margin: 0px 15px 0px 0;
+}
+
+.hide {
+    display: none;
+}

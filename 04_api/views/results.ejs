@@ -1,0 +1,9 @@
+<h1>Results</h1>
+
+<ul>
+    <% data["Search"].forEach( item => { %>
+        <li><%= item["Title"] %> - <%= item["Year"] %></li>
+    <% }) %>
+</ul>
+
+<a href="/">new search</a>
