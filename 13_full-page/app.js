@@ -21,7 +21,7 @@ var commentRoutes   = require("./routes/comments");
 
 
 // CONNECT DATABASES
-mongoose.connect("mongodb://localhost/full_page");
+mongoose.connect("mongodb://root:root@ds119080.mlab.com:19080/node-auth-comments-app");
 
 
 // INIT

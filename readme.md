@@ -8,6 +8,7 @@
 | Description   | testing node app    |
 | Start date    | 01.05.18  |
 | Version     | 1.0.0       |
+| App page | [AppLink] |
 
 
 ---
@@ -27,24 +28,19 @@
 
 ## __Run the App__
  - for start the project in develop mode:   
-  `npm start / npm run dev`
-
-
----
-
+  `npm start / node app.js`
 
 
 ---
 ## __Frontend:__
-[![CSS3][cssImg]][cssLink] [![bootstrap][bootstrapImg]][bootstrapLink] [![jQuery][jQueryImg]][jQueryLink] [![ES6][ES6Img]][ES6Link] 
+[![HTML][HTMLImg]][HTMLLink] [![CSS3][cssImg]][cssLink] [![bootstrap][bootstrapImg]][bootstrapLink] [![jQuery][jQueryImg]][jQueryLink] [![ES6][ES6Img]][ES6Link] 
 ---
 
 ## __Backend:__
-[![node][nodeImg]][nodeLink] [![express][expressImg]][expressLink] [![mongoDB][mongoDBImg]][mongoDBLink] [![SQL][SQLImg]][sqlLink] [![heroku][herokuImg]][herokuLink]
+[![node][nodeImg]][nodeLink] [![express][expressImg]][expressLink] [![mongoDB][mongoDBImg]][mongoDBLink] [![heroku][herokuImg]][herokuLink]
 
 
 ---
-
 
 
 ## __About Author__
@@ -66,7 +62,7 @@
 
 [AuthorPage]: https://max-im.github.io/
 [Portfolio]: https://max-im.github.io/portfolio/
-
+[AppLink]: https://node-auth-coments-app.herokuapp.com/
 
 [myFB]: https://facebook.com/max.pozhidaev.7
 [myIn]: https://www.linkedin.com/in/maxim-pozhidaev-16726811a
