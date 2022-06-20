@@ -43,16 +43,6 @@
 ---
 
 
-## __About Author__
- - author:  Maxim Pozhidaev <pogidaevmo@gmail.com>
- - [AuthorPage]
- - phone: __+38 (050) 77-23-169__
- - skype: __Pogidaev_mo__
- - social: [![facebook][fbImg]][myFb] [![linkedIn][inImg]][myIn] [![vk][vkImg]][myVk]
-
-
-
-
 
 
 [herro]: https://example
